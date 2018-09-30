@@ -1,0 +1,12 @@
+#!/bin/bash
+touch find.txt
+grep -w '#include' config.log > find.txt
+sed s/'\t'//g -i find.txt
+sed s/' '//g -i find.txt
+sort find.txt > sort.txt
+uniq sort.txt > uniq.txt
+wc uniq.txt > wc.txt
+cat uniq.txt
+cat wc.txt
+rm -rf find.txt
+rm -rf sort.txt
